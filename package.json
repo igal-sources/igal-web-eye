@@ -12,14 +12,15 @@
     "react-scripts": "3.3.0",
     "save": "^2.4.0",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.88.2"
+    "semantic-ui-react": "^0.88.2",
+    "simple-git": "^1.129.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "nodemon --watch server.js"
+    "dev": "nodemon --watch ../server/server.js"
   },
   "eslintConfig": {
     "extends": "react-app"

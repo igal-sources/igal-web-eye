@@ -21,10 +21,17 @@ const getBitbucketData = async () => {
   return response;
 };
 
+const getGithubData = async () => {
+  const response = await axios("http://localhost:4000/github");
+  console.log("GithubData: ", response.data.branches);
+  return response;
+};
+
 const App = () => {
-  getJiraData();
-  getJenkinsData();
-  getBitbucketData();
+  // getJiraData();
+  // getJenkinsData();
+  // getBitbucketData();
+  getGithubData();
 
   return (
     <div>

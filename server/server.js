@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const jiraServer = require("./jira-server");
 const jenkinsServer = require("./jenkins-server");
 const bitbucketServer = require("./bitbucket-server");
+const githubServer = require("./github-server");
 var port = process.env.PORT || 4000;
 
 app.use(cors());
@@ -27,6 +28,12 @@ app.get("/bitbucket", (req, res) => {
 
 app.get("/jenkins", (req, res) => {
   jenkinsServer(data => {
+    res.send(data);
+  });
+});
+
+app.get("/github", (req, res) => {
+  githubServer(data => {
     res.send(data);
   });
 });

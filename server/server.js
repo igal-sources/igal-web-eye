@@ -32,8 +32,20 @@ app.get("/jenkins", (req, res) => {
   });
 });
 
-app.get("/github", (req, res) => {
-  githubServer(data => {
+app.get("/github/branch-summary", (req, res) => {
+  githubServer.getBranchSummary(req, data => {
+    res.send(data);
+  });
+});
+
+app.get("/github/branch-create", (req, res) => {
+  githubServer.createNewLocalBranch(req, data => {
+    res.send(data);
+  });
+});
+
+app.get("/github/branch-delete", (req, res) => {
+  githubServer.deleteLocalBranch(req, data => {
     res.send(data);
   });
 });

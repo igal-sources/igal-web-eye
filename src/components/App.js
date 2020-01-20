@@ -2,36 +2,22 @@ import React from "react";
 import axios from "axios";
 import { Table, Icon } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
-
-const getJiraData = async () => {
-  const response = await axios("http://localhost:4000/jira");
-  console.log("JiraData: ", response.data.issues);
-  return response;
-};
-
-const getJenkinsData = async () => {
-  const response = await axios("http://localhost:4000/jenkins");
-  console.log("JenkinsData: ", response);
-  return response;
-};
-
-const getBitbucketData = async () => {
-  const response = await axios("http://localhost:4000/bitbucket");
-  console.log("BitbucketData: ", response.data.values);
-  return response;
-};
-
-const getGithubData = async () => {
-  const response = await axios("http://localhost:4000/github");
-  console.log("GithubData: ", response.data.branches);
-  return response;
-};
+import { getGithubData } from "../apis/github";
+import { getJiraUserAssigneeIssues } from "../apis/jira";
+import { getJenkinsData } from "../apis/jenkins";
 
 const App = () => {
-  // getJiraData();
-  // getJenkinsData();
-  // getBitbucketData();
-  getGithubData();
+  getJiraUserAssigneeIssues(response => {
+    console.log("JiraData: ", response);
+  });
+
+  getGithubData(response => {
+    console.log("GithubData: ", response);
+  });
+
+  getJenkinsData(response => {
+    console.log("JenkinsData: ", response);
+  });
 
   return (
     <div>

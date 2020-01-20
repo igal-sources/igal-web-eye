@@ -1,32 +1,41 @@
 const workingDir = "/Users/igal.leibovich/bright-machines/bright-lab-app"; // As parameter
-const git = require("simple-git/promise");
+const git = require("simple-git/promise")(workingDir);
 
-module.exports = exports = async function(callback) {
-  let branchSummaryResult = null;
+exports.getBranchSummary = async (req, callback) => {
   try {
-    branchSummary1 = await git(workingDir).branchLocal(function(err, branchSummary) {
+    await git.branchLocal(function(err, branchSummary) {
       callback(branchSummary);
     });
   } catch (e) {
-    // handle the error
+    console.log(e);
+  }
+};
+// Create new branch and make it current = true
+exports.createNewLocalBranch = async (request, callback) => {
+  try {
+    await git.checkoutLocalBranch(request.query.branchName, function(err, branchSummary) {
+      callback(branchSummary);
+    });
+  } catch (e) {
+    console.log(e);
   }
 };
 
-async function branch(workingDir) {
-  let branchSummaryResult = null;
+exports.deleteLocalBranch = async (request, callback) => {
   try {
-    branchSummary1 = await git(workingDir).branchLocal(function(err, branchSummary) {
-      branchSummaryResult = branchSummary;
-      console.log("branchSummaryResult: ", branchSummaryResult);
+    await git.deleteLocalBranch(request.query.branchName, function(err, branchSummary) {
+      callback(branchSummary);
     });
   } catch (e) {
-    // handle the error
+    console.log(e);
   }
+};
 
-  return branchSummaryResult;
-}
-
-// const res = branch(workingDir).then(branchSummaryResult =>
-//   console.log("branchResult: ", branchSummaryResult)
-// );
-// console.log("res: ", res);
+exports.deleteBranch = async () => {
+  try {
+    var options = ["--delete", "DP-xxxx-test"];
+    await git.branch(options);
+  } catch (e) {
+    console.log(e);
+  }
+};

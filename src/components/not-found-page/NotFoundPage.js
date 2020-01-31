@@ -3,9 +3,9 @@ import "./not-found-page.scss";
 
 const NotFoundPage = () => {
   return (
-    <div id="notfound">
-      <div class="notfound">
-        <div class="notfound-404">
+    <div id="NotFoundPage-notFound">
+      <div class="NotFoundPage-notFound">
+        <div class="NotFoundPage-notFound-404">
           <h1>Oops!</h1>
         </div>
         <h2>404 - Page not found</h2>

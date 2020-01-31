@@ -8,12 +8,12 @@ body {
   margin: 0;
 }
 
-#notfound {
+#NotFoundPage-notFound {
   position: relative;
   height: 80vh;
 }
 
-#notfound .notfound {
+#NotFoundPage-notFound .NotFoundPage-notFound {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -22,19 +22,19 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.notfound {
+.NotFoundPage-notFound {
   max-width: 410px;
   width: 100%;
   text-align: center;
 }
 
-.notfound .notfound-404 {
+.NotFoundPage-notFound .NotFoundPage-notFound-404 {
   height: 280px;
   position: relative;
   z-index: -1;
 }
 
-.notfound .notfound-404 h1 {
+.NotFoundPage-notFound .NotFoundPage-notFound-404 h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 230px;
   margin: 0px;
@@ -51,7 +51,7 @@ body {
   background-position: center;
 }
 
-.notfound h2 {
+.NotFoundPage-notFound h2 {
   font-family: "Montserrat", sans-serif;
   color: #000;
   font-size: 24px;
@@ -60,7 +60,7 @@ body {
   margin-top: 0;
 }
 
-.notfound p {
+.NotFoundPage-notFound p {
   font-family: "Montserrat", sans-serif;
   color: #000;
   font-size: 14px;
@@ -69,7 +69,7 @@ body {
   margin-top: 0px;
 }
 
-.notfound a {
+.NotFoundPage-notFound a {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   text-decoration: none;
@@ -85,10 +85,10 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
-  .notfound .notfound-404 {
+  .NotFoundPage-notFound .NotFoundPage-notFound-404 {
     height: 142px;
   }
-  .notfound .notfound-404 h1 {
+  .NotFoundPage-notFound .NotFoundPage-notFound-404 h1 {
     font-size: 112px;
   }
 }

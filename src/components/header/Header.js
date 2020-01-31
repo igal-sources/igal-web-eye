@@ -2,6 +2,7 @@ import React from "react";
 import { Link, Route, useLocation } from "react-router-dom";
 import classNames from "classnames";
 import { Menu } from "semantic-ui-react";
+import * as types from "shared/types";
 import "./header.scss";
 
 const Header = () => {
@@ -14,15 +15,15 @@ const Header = () => {
   });
   const tasksClassName = classNames({
     "Header-link": true,
-    active: path === "tasks"
+    active: path === types.TASKS
   });
   const bitbucketClassName = classNames({
     "Header-link": true,
-    active: path === "bitbucket"
+    active: path === types.BITBUCKET
   });
   const jenkinsClassName = classNames({
     "Header-link": true,
-    active: path === "jenkins"
+    active: path === types.JENKINS
   });
 
   return (

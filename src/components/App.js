@@ -1,5 +1,5 @@
 import React from "react";
-import Routes from "./routes";
+import Routes from "./appRoutes";
 import "semantic-ui-css/semantic.min.css";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";

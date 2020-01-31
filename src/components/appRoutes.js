@@ -4,6 +4,7 @@ import Bitbucket from "./Bitbucket";
 import Jenkins from "./Jenkins";
 import Tasks from "./Tasks";
 import Dashboard from "./Dashboard";
+import NotFoundPage from './not-found-page/NotFoundPage'
 
 export default () => (
   <Switch>
@@ -11,5 +12,6 @@ export default () => (
     <Route path={"/jenkins"} component={Jenkins} />
     <Route path={"/tasks"} component={Tasks} />
     <Route exact path="/" component={Dashboard} />
+    <Route component={NotFoundPage} />
   </Switch>
 );

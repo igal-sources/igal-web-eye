@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export const useFetching = url => {
+export const useFetching = (url, interval = 10000) => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState({});
   const [error, setError] = useState(null);
@@ -30,10 +30,10 @@ export const useFetching = url => {
 
     fetchData();
 
-    const interval = setInterval(() => setReload(state => !state), 3000);
+    const reloadInterval = setInterval(() => setReload(state => !state), interval);
 
     return () => {
-      clearInterval(interval)
+      clearInterval(reloadInterval);
     };
   }, [url, reload]);
 

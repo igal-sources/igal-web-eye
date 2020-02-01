@@ -1,3 +1,5 @@
+@import "shared/css/main.scss";
+
 .Header-mainMenu,
 .Header-mainMenu.ui.menu {
   background: #181819 !important;
@@ -5,9 +7,10 @@
   box-shadow: 0px 0px 5px 0px #181819 !important;
   border: none;
   padding: 0;
+  height: 95px;
 }
 
-.Header-links { 
+.Header-links {
   font-size: 1.2rem;
   margin: 13px 10px 15px 57px;
 }
@@ -23,5 +26,21 @@
   line-height: 24px;
   color: rgba(209, 215, 224, 0.5);
   display: inline-block;
-  margin: 23px 10px 15px 56px;
+  margin: 23px 10px 20px 56px;
+}
+
+#Header-settings {
+  color: white;
+}
+
+#Header-settings-tooltip:hover:after {
+  content: "Settings";
+  display: block;
+  position: relative;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  top: 5px;
+  right: 10px;
+  width: 15px;
 }

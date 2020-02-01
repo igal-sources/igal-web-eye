@@ -15,19 +15,19 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get("/jira", (req, res) => {
-  jiraServer(data => {
+  jiraServer(req, data => {
     res.send(data);
   });
 });
 
 app.get("/bitbucket", (req, res) => {
-  bitbucketServer(data => {
+  bitbucketServer(req, data => {
     res.send(data);
   });
 });
 
 app.get("/jenkins", (req, res) => {
-  jenkinsServer(data => {
+  jenkinsServer(req, data => {
     res.send(data);
   });
 });
@@ -50,7 +50,6 @@ app.get("/github/branch-delete", (req, res) => {
   });
 });
 
-//TODO: Separate to difference ports
 app.listen(port, () => {
   console.log("Connected to port " + port);
 });

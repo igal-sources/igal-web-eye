@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Route, useLocation } from "react-router-dom";
 import classNames from "classnames";
-import { Menu } from "semantic-ui-react";
+import { Menu, Icon } from "semantic-ui-react";
 import * as types from "shared/types";
 import "./header.scss";
 
@@ -42,7 +42,18 @@ const Header = () => {
           <Link to="/jenkins" className={jenkinsClassName}>
             Jenkins
           </Link>
+          
+          
         </div>
+        <Menu.Item
+            id="Header-settings"
+            position="right"
+            className="Header-menuItem-settings"
+            active={pathname.startsWith("settings", 1)}
+            as={Link}
+            to={'/settings'}>
+            <Icon id='Header-settings-tooltip' size='big' name='setting' />
+          </Menu.Item>
         <Route path="/" />
         <Route path="/tasks" />
         <Route path="/jenkins" />

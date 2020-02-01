@@ -1,5 +1,5 @@
 import React from "react";
-import { useFetching } from "../utils/hooks/useFetching";
+import { useFetching } from "../services/hooks/useFetching";
 
 const Bitbucket = () => {
     

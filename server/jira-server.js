@@ -1,7 +1,7 @@
 module.exports = exports = function(req, callback) {
-  var request = require("request");
-
-  var options = {
+  const request = require("request");
+ 
+  const options = {
     method: "GET",
     url: "https://brightmachines.atlassian.net/rest/api/2" + req.query.queryParams,
     headers: {

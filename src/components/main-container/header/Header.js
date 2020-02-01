@@ -16,7 +16,6 @@ const Header = () => {
   
   useEffect(() => {
     const {key, accountId, name, emailAddress, displayName} = data;
-    console.log('accountId: ', accountId);
     store.setUserProfile({
       key: key,
       accountId: accountId,

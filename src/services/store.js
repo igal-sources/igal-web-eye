@@ -7,25 +7,23 @@ const StoreProvider = ({ authToken, children, setAuthToken }) => {
   const [help, setHelp] = useState([]);
   const [pairing, setPairing] = useState([]);
   const [sharing, setSharing] = useState([]);
-  const [pollsData, setPollsData] = useState(null);
-  const [vimMode, setVimMode] = useState(false);
   const savedName = localStorage.getItem("userName");
   const [userName, setUserName] = useState(savedName);
+  const [userProfile, setUserProfile] = useState({});
+  console.log('userProfile: ', userProfile);
 
   const store = {
     activeSession,
     authToken,
     help: [help, setHelp],
     userName,
+    userProfile,
     pairing: [pairing, setPairing],
-    pollsData,
     setActiveSession,
     setAuthToken,
     setUserName,
-    setPollsData,
-    setVimMode,
-    sharing: [sharing, setSharing],
-    vimMode
+    setUserProfile,
+    sharing: [sharing, setSharing]
   };
 
   return <StoreContext.Provider value={store}>{children}</StoreContext.Provider>;

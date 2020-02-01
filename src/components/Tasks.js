@@ -3,10 +3,10 @@ import { useFetching } from "services/hooks/useFetching";
 
 const Tasks = () => {
   const { loading, data, error } = useFetching(
-    "http://localhost:4000/jira",
+    "/jira",
     "/search?jql=assignee=igal.leibovich"
   );
-  console.log("loading, data, error: ", loading, data, error);
+  console.log("Tasks: loading, data, error: ", loading, data, error);
   return (
     <div>
       <h1>Tasks</h1>
